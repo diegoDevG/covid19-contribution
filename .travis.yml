@@ -8,7 +8,7 @@ git:
   depth: 3
 script:
   - yarn build
-  -echo 'clasificados.tunjadigital.com.co' > public/CNAME  
+  - echo 'clasificados.tunjadigital.com.co' > public/CNAME  
 deploy:
   name: Elmo@gremlim
   provider: pages
