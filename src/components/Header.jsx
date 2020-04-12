@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 const Header = () => {
   const location = useLocation();
   const isPublishPage = location.pathname === '/publicar';
+  
   return (
     <header
       className='h-40 bg-teal-600 flex justify-center pb-4 flex-col items-center relative'
