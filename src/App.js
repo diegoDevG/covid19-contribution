@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import PublisherForm from './pages/PublisherForm';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { QueryContext } from './utilities/QueryContext';
+import './css/tailwind.css';
 
 function App() {
+  const [value, setValue] = useState('');
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <QueryContext.Provider value={{ value, setValue }}>
+        <Layout>
+          <Switch>
+            <Route exact path='/' component={Home}></Route>
+            <Route exact path='/publicar' component={PublisherForm}></Route>
+          </Switch>
+        </Layout>
+      </QueryContext.Provider>
+    </Router>
   );
 }
 
