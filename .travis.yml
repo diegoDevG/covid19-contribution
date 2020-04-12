@@ -1,21 +1,22 @@
 language: node_js
 cache:
   directories:
-    - ~!@/.npm
+    - ~/.npm
 node_js:
   - '12'
-git:  
+git:
   depth: 3
-script: 
-  -yarn build
-  -echo 'clasificados.tunjadigital.com.co' > public/CNAME
+script:
+  - yarn build
+  -echo 'clasificados.tunjadigital.com.co' > public/CNAME  
 deploy:
+  name: Elmo@gremlim
   provider: pages
   skip-cleanup: true
   keep-history: true
-  github-token: $GITHUB_TOKEN
-  local-dir: dist/
+  github-token: $GITHUB_TOKEN_BADGE
+  local-dir: build/
   target-branch: master
-  commit_message: 'Deploy release ${TRAVIS_TAG}'
-on:
-  branch: develop
+  commit_message: "Deploy release ${TRAVIS_TAG}"
+  on:
+    branch: develop
