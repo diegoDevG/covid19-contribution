@@ -96,7 +96,7 @@ const Home = () => {
 
   return (
     <>
-      <main className='flex flex-wrap max-w-screen-xl mx-auto mt-12 justify-center ' style={{ minHeight: 'calc(100vh - 264px)' }}>
+      <main className='flex flex-wrap max-w-screen-xl mx-auto mt-12 justify-center bg-mainColor' style={{ minHeight: 'calc(100vh - 264px)' }}>
         {isLoading && <img src={loader} alt='cargando... ' />}
         {filterData.length === 0 && !isLoading ? (
           <div>Parece que nadie esta ofreciendo lo que buscas :( Prueba con otro termino de busqueda o vuelve en unos dias. </div>
